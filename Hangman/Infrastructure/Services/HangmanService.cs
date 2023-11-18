@@ -19,11 +19,30 @@ namespace Infrastructure.Services
 
             ChosenWord = words[Random.Next(words.Count)];
 
-            HangmanDTO hangmanDTO = new HangmanDTO();
+            HangmanDTO hangmanDTO = new HangmanDTO
+            {
+                RemainingAttempts = MaxAttempts,
 
-            hangmanDTO.RemainingAttempts = MaxAttempts;
+                GuessedWord = string.Concat(Enumerable.Repeat("_", ChosenWord.Length))
+            };
 
-            hangmanDTO.GuessedWord = string.Concat(Enumerable.Repeat("_", ChosenWord.Length));
+            return hangmanDTO;
+        }
+
+        public HangmanDTO SetWordForTest(string word)
+        {
+            Attempts = 0;
+
+            var words = HangmanWords.GetWords();
+
+            ChosenWord = word;
+
+            HangmanDTO hangmanDTO = new HangmanDTO
+            {
+                RemainingAttempts = MaxAttempts,
+
+                GuessedWord = string.Concat(Enumerable.Repeat("_", ChosenWord.Length))
+            };
 
             return hangmanDTO;
         }
