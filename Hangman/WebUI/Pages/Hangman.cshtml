@@ -2,7 +2,7 @@
 @using Application.DTO;
 @model WebUI.Pages.HangmanModel
 @{
-
+    ViewData["Title"] = "Hangman";
     <form asp-page-handler="TakeGuess">
         <div class="mb-3">
             <input asp-for="HangmanDTO.GuessedWord" name="HangmanDTO.GuessedWord" readonly> @Model.HangmanDTO.GuessedWord.Length Letters

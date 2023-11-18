@@ -44,7 +44,7 @@ namespace Infrastructure.Services
                 }
                 else
                 {
-                    var charArray = hangmanGuess.Guess.ToCharArray();
+                    var charArray = hangmanGuess.Guess.ToUpper().ToCharArray();
 
                     for (int i = 0; i < ChosenWord.Length; i++)
                     {
