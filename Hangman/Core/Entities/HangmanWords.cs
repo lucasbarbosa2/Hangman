@@ -9,7 +9,7 @@ namespace Core.Entities
         {
             IList<string> Words = new List<string>();
 
-            XElement RootNode = XElement.Load(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName,"/WebUI/wwwroot/Files/Words.xml"));
+            XElement RootNode = XElement.Load(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName,"WebUI/wwwroot/Files/Words.xml"));
             foreach (XElement word_lists in RootNode.Elements())
             {
                 foreach (XElement word in word_lists.Elements())
