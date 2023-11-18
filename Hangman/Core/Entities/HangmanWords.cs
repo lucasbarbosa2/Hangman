@@ -16,7 +16,7 @@ namespace Core.Entities
             // This will get the current PROJECT directory
             string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
 
-            XElement RootNode = XElement.Load(Path.Combine(workingDirectory, "WebUI/wwwroot/Files/Words.xml"));
+            XElement RootNode = XElement.Load(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "WebUI/wwwroot/Files/Words.xml"));
             foreach (XElement word_lists in RootNode.Elements())
             {
                 foreach (XElement word in word_lists.Elements())
