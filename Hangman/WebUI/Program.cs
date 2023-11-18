@@ -1,4 +1,6 @@
 using Application.Interfaces;
+using Core.Entities;
+using Core.Interfaces;
 using Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages(Options => Options.Conventions.AddPageRoute("/Hangman",""));
 builder.Services.AddSingleton<IHangmanService, HangmanService>();
+builder.Services.AddSingleton<IHangmanWords, HangmanWords>();
 
 var app = builder.Build();
 

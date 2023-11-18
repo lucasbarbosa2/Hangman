@@ -1,6 +1,7 @@
 ﻿using Application.DTO;
 using Application.Interfaces;
 using Core.Entities;
+using Core.Interfaces;
 
 namespace Infrastructure.Services
 {
@@ -10,6 +11,12 @@ namespace Infrastructure.Services
         private int Attempts { get; set; }
         private readonly int MaxAttempts = 7;
         private string ChosenWord { get; set; } = string.Empty;
+        private IHangmanWords HangmanWords { get; set; }
+
+        public HangmanService(IHangmanWords hangmanWords)
+        {
+            HangmanWords = hangmanWords;
+        }
 
         public HangmanDTO SetChosenWord()
         {
