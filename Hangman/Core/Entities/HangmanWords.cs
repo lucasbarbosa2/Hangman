@@ -9,14 +9,7 @@ namespace Core.Entities
         {
             IList<string> Words = new List<string>();
 
-            // This will get the current WORKING directory (i.e. \bin\Debug)
-            string workingDirectory = Environment.CurrentDirectory;
-            // or: Directory.GetCurrentDirectory() gives the same result
-
-            // This will get the current PROJECT directory
-            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
-
-            XElement RootNode = XElement.Load(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "WebUI/wwwroot/Files/Words.xml"));
+            XElement RootNode = XElement.Load(Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName,"wwwroot/Files/Words.xml"));
             foreach (XElement word_lists in RootNode.Elements())
             {
                 foreach (XElement word in word_lists.Elements())
