@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using System.IO;
+using System.Xml.Linq;
 
 namespace Core.Entities
 {
@@ -8,7 +9,7 @@ namespace Core.Entities
         {
             IList<string> Words = new List<string>();
 
-            XElement RootNode = XElement.Load(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,""));
+            XElement RootNode = XElement.Load(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName,""));
             foreach (XElement word_lists in RootNode.Elements())
             {
                 foreach (XElement word in word_lists.Elements())
