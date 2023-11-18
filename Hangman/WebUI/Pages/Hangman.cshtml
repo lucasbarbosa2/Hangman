@@ -1,0 +1,37 @@
+﻿@page
+@using Application.DTO;
+@model WebUI.Pages.HangmanModel
+@{
+
+    <form asp-page-handler="TakeGuess">
+        <div class="mb-3">
+            <input asp-for="HangmanDTO.GuessedWord" name="HangmanDTO.GuessedWord" readonly> @Model.HangmanDTO.GuessedWord.Length Letters
+        </div>
+        <div class="mb-3">
+            <input type="text" asp-for="HangmanDTO.RemainingAttempts" name="HangmanDTO.RemainingAttempts" readonly> Remaining Attempts
+        </div>
+        <div class="mb-3">
+            <input asp-for="HangmanGuess.Guess" name="HangmanGuess.Guess" autocomplete="off"> Try one letter or the whole word.
+            <span asp-validation-for="HangmanGuess.Guess" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <input asp-for="Attempted" name="Attempted" autocomplete="off" readonly> Attempts
+        </div>
+        <div class="mb-3">
+            <button type="submit" disabled="@(!Model.HangmanDTO.Stage.Equals(Stages.Playing))"> Take a Guess</button>
+        </div>
+        @if(Model.HangmanDTO.Stage == Stages.Won)
+        {
+            <span>Congratulations!</span>
+        }
+        @if (Model.HangmanDTO.Stage == Stages.Lose)
+        {
+            <span>Sorry! Better luck nex time</span>
+        }
+    </form>
+    <form asp-page-handler="Restart">
+        <div class="mb-3">
+            <button type="submit">Restart</button>
+        </div>
+    </form>
+}
