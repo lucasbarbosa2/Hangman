@@ -7,7 +7,7 @@ namespace Core.Entities
         public static IList<string> GetWords()
         {
             IList<string> Words = new List<string>();
-            XElement RootNode = XElement.Load("/wwwroot/Files/Words.xml");
+            XElement RootNode = XElement.Load("Words.xml");
             foreach (XElement word_lists in RootNode.Elements())
             {
                 foreach (XElement word in word_lists.Elements())
@@ -20,7 +20,6 @@ namespace Core.Entities
             }
 
             return Words;
-        }
-
+        }        
     }
 }
