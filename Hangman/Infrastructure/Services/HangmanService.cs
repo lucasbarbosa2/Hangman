@@ -29,24 +29,6 @@ namespace Infrastructure.Services
             return hangmanDTO;
         }
 
-        public HangmanDTO SetWordForTest(string word)
-        {
-            Attempts = 0;
-
-            var words = HangmanWords.GetWords();
-
-            ChosenWord = word;
-
-            HangmanDTO hangmanDTO = new HangmanDTO
-            {
-                RemainingAttempts = MaxAttempts,
-
-                GuessedWord = string.Concat(Enumerable.Repeat("_", ChosenWord.Length))
-            };
-
-            return hangmanDTO;
-        }
-
         public HangmanDTO CheckLetter(HangmanDTO HangmanDTO, HangmanGuess hangmanGuess)
         {
             if (hangmanGuess != null && !string.IsNullOrEmpty(hangmanGuess.Guess))

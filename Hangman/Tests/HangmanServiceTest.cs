@@ -117,7 +117,7 @@ namespace Tests
 
             var HangmanService = new HangmanService();
 
-            var hangmanDTO = HangmanService.SetWordForTest("TEST");
+            var hangmanDTO = HangmanService.SetChosenWord();
 
             hangmanDTO = HangmanService.CheckLetter(
                 hangmanDTO,
@@ -141,7 +141,7 @@ namespace Tests
 
             var HangmanService = new HangmanService();
 
-            var hangmanDTO = HangmanService.SetWordForTest("TEST");
+            var hangmanDTO = HangmanService.SetChosenWord();
 
             hangmanDTO = HangmanService.CheckLetter(
                 hangmanDTO,
