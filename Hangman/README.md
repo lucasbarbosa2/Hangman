@@ -10,3 +10,6 @@ This is a Razor with .Net Core 6 project.
 
 To run this project you will need XUnit package and Fine Code Coverage Extension.
 
+## Deployed Application
+
+https://hangman20231118225246.azurewebsites.net/
