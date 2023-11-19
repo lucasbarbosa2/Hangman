@@ -13,3 +13,7 @@ To run this project you will need XUnit package and Fine Code Coverage Extension
 ## Deployed Application
 
 https://hangman20231118225246.azurewebsites.net/
+
+## Pipeline for automated tests
+
+https://lucasbarbosa2.visualstudio.com/Desafios/_build
