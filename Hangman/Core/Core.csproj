@@ -7,21 +7,17 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Remove="Entities\Words.xml" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<EmbeddedResource Include="Entities\Words.xml">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</EmbeddedResource>
-	</ItemGroup>
-
-	<ItemGroup>
 		<ProjectReference Include="..\Application\Application.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Entities\Words.xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 </Project>
